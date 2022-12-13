@@ -6,17 +6,27 @@ import 'getx/snackbar.dart';
 import 'getx/dialog.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       title: 'Snackbar',
-      home: Navigation(),
+      // Routeing
+      initialRoute: '/',
+      defaultTransition: Transition.zoom,
+      getPages: [
+        GetPage(name: '/', page: () => BottomSheetDynamicTheme()),
+        GetPage(name: '/dialog', page: () => Dialog()),
+        //specified transition
+        GetPage(
+            name: '/snzckbar',
+            page: () => Snackbar(),
+            transition: Transition.leftToRight),
+      ],
+      //home: Navigation(),
     );
   }
 }

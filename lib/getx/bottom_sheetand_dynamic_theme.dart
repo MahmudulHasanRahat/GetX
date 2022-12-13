@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/getx/dialog.dart';
 
 class BottomSheetDynamicTheme extends StatelessWidget {
   const BottomSheetDynamicTheme({Key? key}) : super(key: key);
@@ -48,7 +49,15 @@ class BottomSheetDynamicTheme extends StatelessWidget {
                   ),
                 );
               },
-            )
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('/dialog');
+                },
+                child: Text('name route')),
           ],
         ),
       ),

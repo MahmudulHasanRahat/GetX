@@ -17,14 +17,22 @@ class Navigation extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
                 Get.to(
                   Snackbar(),
                   fullscreenDialog: true,
                   transition: Transition.zoom,
                   duration: Duration(milliseconds: 4000),
-                  curve: Curves.easeOutQuart,
+                  curve: Curves.bounceInOut,
                 );
+                //go to next screen but can not go back
+                //Get.off(Snackbar());
+                //go to next screen and cancel all prrevious page
+                //Get.offAll(Snackbar());
+                //go to next screen with some data
+                //Get.to(Snackbar(),arguments: 'Data from this page');
+                //go to next screen and recive data from porivious screen
+                //var data=await Get.to(Snackbar());
               },
               child: Text('Navigation'),
             )
